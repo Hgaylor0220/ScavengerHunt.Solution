@@ -80,7 +80,7 @@ namespace ScavengerHunt.Controllers
         }
 
 
-        public ActionResult AddItem(int id)
+        public ActionResult AddItems(int id)
         {
             var thisQuest = _db.Quests.FirstOrDefault(quest => quest.QuestId == id);
             ViewBag.ItemId = new SelectList(_db.Items, "ItemId", "ItemName");
@@ -88,7 +88,7 @@ namespace ScavengerHunt.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddItem(Quest quest, int ItemId)
+        public ActionResult AddItems(Quest quest, int ItemId)
         {
             if (ItemId != 0)
             {
